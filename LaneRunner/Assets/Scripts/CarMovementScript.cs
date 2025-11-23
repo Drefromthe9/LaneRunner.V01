@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CarMovementScript : MonoBehaviour
 {
+    bool alive = true;
 
     public float carSpeed = 3;
     public float horizontalSpeed = 4;
@@ -10,6 +13,7 @@ public class CarMovementScript : MonoBehaviour
     
     void Update()
     {
+        if(!alive) return;
         transform.Translate(Vector3.forward * Time.deltaTime * carSpeed, Space.World);
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -26,5 +30,17 @@ public class CarMovementScript : MonoBehaviour
                 transform.Translate(Vector3.right * Time.deltaTime * horizontalSpeed );
             }
         }
+    }
+
+    public void Die()
+    {
+        alive = false;
+        Invoke ("Restart", 2);
+    }
+
+
+    void Restart()
+    {
+         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
