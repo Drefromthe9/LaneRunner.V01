@@ -7,6 +7,11 @@ public class CarMovementScript : MonoBehaviour
     bool alive = true;
 
     public float carSpeed = 3;
+    public float maxSpeed= 25f;
+    public float increaseStartTime = 5f;
+    public float acceleration = 2f;
+
+    private bool canAccelerate = false;
     public float horizontalSpeed = 4;
     public float rightLimit= 4.4f;
     public float leftLimit=-4.4f;
@@ -29,6 +34,15 @@ public class CarMovementScript : MonoBehaviour
             {
                 transform.Translate(Vector3.right * Time.deltaTime * horizontalSpeed );
             }
+        }
+
+        if(Time.time >= increaseStartTime)
+        {
+            canAccelerate = true;
+        }   
+        if(canAccelerate && carSpeed < maxSpeed)
+        {
+            carSpeed += acceleration * Time.deltaTime;
         }
     }
 
