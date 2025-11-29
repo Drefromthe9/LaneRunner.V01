@@ -3,37 +3,49 @@ using UnityEngine;
 
 public class SegmentGenerator : MonoBehaviour
 {
-    public GameObject segmentMap01;
-    public GameObject segmentMap02;
-    public GameObject segmentMap03;
+    public GameObject[] segment;
 
-    public GameObject segmentMap04;
-    public GameObject segmentMap05;
-    public GameObject segmentMap06;
+    [SerializeField] int zPos = 50;
+    [SerializeField] bool creatingSegment = true;
 
-    public GameObject segmentMap07;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    int lastSegmentIndex = -1;
+
     void Start()
     {
+        creatingSegment = true;
         StartCoroutine(SegmentGen());
+    }
+
+    void Update()
+    {
+        if (creatingSegment == false)
+        {
+            creatingSegment = true;
+            StartCoroutine(SegmentGen());
+        }
     }
 
     IEnumerator SegmentGen()
     {
-        yield return new WaitForSeconds(5);
-        segmentMap02.SetActive(true);
-        yield return new WaitForSeconds(5);
-        segmentMap03.SetActive(true);
-        yield return new WaitForSeconds(5);
-        segmentMap04.SetActive(true);
-        yield return new WaitForSeconds(5);
-        segmentMap05.SetActive(true);
-        yield return new WaitForSeconds(5);
-        segmentMap06.SetActive(true);
-        yield return new WaitForSeconds(5);
-        segmentMap07.SetActive(true);
+        int segmentNum = GetNextSegmentIndex();
+        Instantiate(segment[segmentNum], new Vector3(0, 0, zPos), Quaternion.identity);
+        zPos += 200;
+        yield return new WaitForSeconds(3f);
+        creatingSegment = false;
+    }
 
+    int GetNextSegmentIndex()
+    {
+        if (segment.Length == 1) return 0;
 
+        int index;
+        do
+        {
+            index = Random.Range(0, segment.Length);  // use whole array
+        }
+        while (index == lastSegmentIndex);
+
+        lastSegmentIndex = index;
+        return index;
     }
 }
