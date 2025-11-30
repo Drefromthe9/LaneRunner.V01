@@ -11,10 +11,10 @@ public class SegmentGenerator : MonoBehaviour
 
     int lastSegmentIndex = -1;
 
-    // 🔹 How many segments you want to keep alive at once
+    //  How many segments you want to keep alive at once
     [SerializeField] int maxSegments = 8;
 
-    // 🔹 Track spawned segments in order
+    //  Track spawned segments in order
     private Queue<GameObject> spawnedSegments = new Queue<GameObject>();
 
     void Start()
@@ -42,9 +42,9 @@ public class SegmentGenerator : MonoBehaviour
             Quaternion.identity
         );
 
-        spawnedSegments.Enqueue(newSeg);   // 🔹 remember the new one
+        spawnedSegments.Enqueue(newSeg);   //  remember the new one
 
-        // 🔥 If we have too many segments, delete the oldest
+        //  If we have too many segments, delete the oldest
         if (spawnedSegments.Count > maxSegments)
         {
             GameObject oldSeg = spawnedSegments.Dequeue();

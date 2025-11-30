@@ -1,27 +1,18 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Obstacle : MonoBehaviour
 {
- CarMovementScript playerMovement; 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+   private void OnTriggerEnter(Collider other)
     {
-        playerMovement = GameObject.FindObjectOfType<CarMovementScript>();
-
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "Player")
+        if (other.CompareTag("Player"))
         {
-            playerMovement.Die();
+            CarMovementScript car = other.GetComponent<CarMovementScript>();
+            if (car != null)
+            {
+                car.Die();   // Properly kills and restarts
+            }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
