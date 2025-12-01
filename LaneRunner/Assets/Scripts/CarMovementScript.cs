@@ -46,13 +46,15 @@ public class CarMovementScript : MonoBehaviour
         }
     }
 
-    public void Die()
-    {
-        alive = false;
-        
+   public void Die()
+{
+    
+    if (ScoreManager.Instance != null)
         ScoreManager.Instance.EndGameAndSaveScore();
 
-        SceneManager.LoadScene("GameOverScene");
-    }
+   
+    SceneManager.LoadScene("GameOverScene");
+}
+
 
 }

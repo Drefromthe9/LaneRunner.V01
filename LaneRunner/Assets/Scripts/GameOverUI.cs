@@ -3,15 +3,18 @@ using TMPro;
 
 public class GameOverUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI finalScoreText; // assign in Inspector
+    [SerializeField] private TextMeshProUGUI finalScoreText;
 
     private void OnEnable()
     {
-        // When this UI shows up, pull the saved final score from ScoreManager
-        int score = ScoreManager.finalScore;
-        if (finalScoreText != null)
+        Debug.Log("GameOverUI: finalScore = " + ScoreManager.finalScore);
+
+        if (finalScoreText == null)
         {
-            finalScoreText.text = "Final Score: " + score;
+            Debug.LogError("GameOverUI: FINAL SCORE TEXT IS NOT ASSIGNED IN INSPECTOR!");
+            return;
         }
+
+        finalScoreText.text = "Final Score: " + ScoreManager.finalScore;
     }
 }
