@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class CollectCoin : MonoBehaviour
 {
-    [SerializeField] AudioSource coinFx;
-     
-     void OnTriggerEnter(Collider other)
+    [SerializeField] AudioSource coinFX;
+
+    private void OnTriggerEnter(Collider other)
     {
-        coinFx.Play();
-        this.gameObject.SetActive(false);
+        Debug.Log("Coin triggered by: " + other.name);   
+
+        if (!other.CompareTag("Player")) return;         
+        coinFX.Play();
+        gameObject.SetActive(false);
     }
 }
