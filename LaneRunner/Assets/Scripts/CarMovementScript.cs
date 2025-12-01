@@ -49,12 +49,10 @@ public class CarMovementScript : MonoBehaviour
     public void Die()
     {
         alive = false;
-        Invoke ("Restart", 2);
+        
+        ScoreManager.Instance.EndGameAndSaveScore();
+
+        SceneManager.LoadScene("GameOverScene");
     }
 
-
-    void Restart()
-    {
-         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
