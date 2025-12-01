@@ -20,10 +20,8 @@ public class CoinCollection : MonoBehaviour
     {
         Debug.Log("Car trigger hit: " + other.name + " | tag: " + other.tag);
 
-        // Only react to objects tagged as "Coin"
         if (!other.CompareTag("Coin")) return;
 
-        // Play sound if assigned
         if (coinFX != null)
         {
             coinFX.Play();
@@ -36,7 +34,13 @@ public class CoinCollection : MonoBehaviour
             coinText.text = "Coin: " + coin;
         }
 
-        // Destroy the coin
+        // Tell ScoreManager to add points for this coin
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.AddCoinBonus(1); // 1 coin -> +10 points (configurable in ScoreManager)
+        }
+
+        // Destroy the coin after pickup
         Destroy(other.gameObject);
     }
 }
