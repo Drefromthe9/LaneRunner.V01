@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 868.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 108
+  controlID: 112
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 49
+  controlID: 52
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 50
+  controlID: 53
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -326,7 +326,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -336,30 +336,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\CSCI 342\LaneRunner.V01\LaneRunner
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0e310100
-    m_LastClickedID: 78094
-    m_ExpandedIDs: 00000000586904009269040096690400cc6904004e30160000ca9a3b
+    scrollPos: {x: 0, y: 54}
+    m_SelectedIDs: 1a460100
+    m_LastClickedID: 83482
+    m_ExpandedIDs: 0000000046450100484501004a4501004c4501005045010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Audio
-      m_OriginalName: Audio
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 1454158
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 5}
@@ -374,7 +374,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000074300100
+    m_ExpandedIDs: 0000000046450100484501004a4501004c4501004e45010050450100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -520,9 +520,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 70931600
-      m_LastClickedID: 1479536
-      m_ExpandedIDs: 7a03cdfffa03cdff6cbdceffa2c4ceff9e14d1ff2015d1ff8215d1ff14fbffff32050600
+      m_SelectedIDs: 48ad0100
+      m_LastClickedID: 0
+      m_ExpandedIDs: d693fdff14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 192.26736, y: 11.491988, z: 73}
     speed: 2
-    m_Value: {x: 5.361803, y: 1.0848651, z: 30.913658}
+    m_Value: {x: 192.26736, y: 11.491988, z: 73}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1232,11 +1232,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.2327494, y: 0.66148174, z: -0.22791214, w: -0.67552185}
     speed: 2
-    m_Value: {x: 0, y: 1, z: 0, w: 0}
+    m_Value: {x: -0.23274893, y: 0.6614804, z: -0.22791168, w: -0.6755205}
   m_Size:
     m_Target: 136.8078
     speed: 2
-    m_Value: 3.4375324
+    m_Value: 136.8078
   m_Ortho:
     m_Target: 0
     speed: 2
