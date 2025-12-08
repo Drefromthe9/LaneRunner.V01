@@ -5,22 +5,21 @@ public class CoinCollection : MonoBehaviour
 {
     private int coin = 0;
 
-    [SerializeField] TextMeshProUGUI coinText;     // assign in Inspector
-    [SerializeField] AudioSource coinFX;           // assign in Inspector
-
+    [SerializeField] TextMeshProUGUI coinText;     
+    [SerializeField] AudioSource coinFX;           
     private void Start()
     {
         if (coinText != null)
         {
-            coinText.text = "Coin: 0";
+            coinText.text = "Coin: 0"; // Initialize coin text
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Car trigger hit: " + other.name + " | tag: " + other.tag);
+        Debug.Log("Car trigger hit: " + other.name + " | tag: " + other.tag); // Debug line to see what we hit
 
-        if (!other.CompareTag("Coin")) return;
+        if (!other.CompareTag("Coin")) return; // Only proceed if we hit a coin
 
         if (coinFX != null)
         {

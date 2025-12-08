@@ -13,7 +13,7 @@ public class GameOverCaller : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("ScoreManager.Instance null when triggering game over. Using static finalScore = " + ScoreManager.finalScore);
+            Debug.LogWarning("ScoreManager.Instance null when triggering game over. Using static finalScore = " + ScoreManager.finalScore); 
         }
 
         // THEN load GameOver scene (replace with your actual scene name)

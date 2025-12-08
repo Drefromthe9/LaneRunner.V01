@@ -9,12 +9,12 @@ public class GroundSpawner : MonoBehaviour
 
      public void SpawnSection()
     {
-        GameObject temp = Instantiate(groundSection, nextSpawnPoint, Quaternion.identity);
+        GameObject temp = Instantiate(groundSection, nextSpawnPoint, Quaternion.identity);// Spawn new ground section at the next spawn points
         nextSpawnPoint = temp.transform.GetChild(1).position;
     }
     void Start()
     {
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 15; i++) // Spawn initial ground sections
         SpawnSection();
     }
 

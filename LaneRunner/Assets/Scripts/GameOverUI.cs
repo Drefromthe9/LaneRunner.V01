@@ -11,10 +11,10 @@ public class GameOverUI : MonoBehaviour
 
         if (finalScoreText == null)
         {
-            Debug.LogError("GameOverUI: FINAL SCORE TEXT IS NOT ASSIGNED IN INSPECTOR!");
+            Debug.LogError("GameOverUI: FINAL SCORE TEXT IS NOT ASSIGNED IN INSPECTOR!"); 
             return;
         }
 
-        finalScoreText.text = "Final Score: " + ScoreManager.finalScore;
+        finalScoreText.text = "Final Score: " + ScoreManager.finalScore; // Display final score
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SegmentGenerator : MonoBehaviour
 {
-    public GameObject[] segment;
+    public GameObject[] segment; //  Array of segments to choose from
 
-    [SerializeField] int zPos = 50;
-    [SerializeField] bool creatingSegment = true;
+    [SerializeField] int zPos = 50; //  Where to spawn the next segment
+    [SerializeField] bool creatingSegment = true; 
 
-    int lastSegmentIndex = -1;
+    int lastSegmentIndex = -1; //  To avoid repeating the same segment
 
     //  How many segments you want to keep alive at once
     [SerializeField] int maxSegments = 8;
@@ -25,10 +25,10 @@ public class SegmentGenerator : MonoBehaviour
 
     void Update()
     {
-        if (!creatingSegment)
+        if (!creatingSegment) 
         {
-            creatingSegment = true;
-            StartCoroutine(SegmentGen());
+            creatingSegment = true; 
+            StartCoroutine(SegmentGen()); 
         }
     }
 
@@ -59,7 +59,7 @@ public class SegmentGenerator : MonoBehaviour
         creatingSegment = false;
     }
 
-    int GetNextSegmentIndex()
+    int GetNextSegmentIndex() //  Avoid repeating the same segment
     {
         if (segment.Length == 1) return 0;
 
@@ -68,9 +68,9 @@ public class SegmentGenerator : MonoBehaviour
         {
             index = Random.Range(0, segment.Length);
         }
-        while (index == lastSegmentIndex);
+        while (index == lastSegmentIndex); //  keep trying if same as last time
 
-        lastSegmentIndex = index;
+        lastSegmentIndex = index; 
         return index;
     }
 }

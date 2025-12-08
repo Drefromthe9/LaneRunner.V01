@@ -24,36 +24,36 @@ public class CarMovementScript : MonoBehaviour
         {
             if (this.gameObject.transform.position.x > leftLimit)
             {
-                transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
+                transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed); // Move left
             }
         }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) // Move right
         {
             if (this.gameObject.transform.position.x < rightLimit) 
             {
-                transform.Translate(Vector3.right * Time.deltaTime * horizontalSpeed );
+                transform.Translate(Vector3.right * Time.deltaTime * horizontalSpeed ); 
             }
         }
 
-        if(Time.time >= increaseStartTime)
+        if(Time.time >= increaseStartTime) // Start acceleration after delay
         {
             canAccelerate = true;
         }   
-        if(canAccelerate && carSpeed < maxSpeed)
+        if(canAccelerate && carSpeed < maxSpeed) // Accelerate up to max speed
         {
             carSpeed += acceleration * Time.deltaTime;
         }
     }
 
-   public void Die()
+   public void Die()// Handle car death
 {
     
     if (ScoreManager.Instance != null)
-        ScoreManager.Instance.EndGameAndSaveScore();
+        ScoreManager.Instance.EndGameAndSaveScore(); // Save score on death
 
    
-    SceneManager.LoadScene("GameOverScene");
+    SceneManager.LoadScene("GameOverScene"); // Reload current scene
 }
 
 
